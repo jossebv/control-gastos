@@ -6,7 +6,8 @@ function Header({
     setPresupuesto,
     isValidPresupuesto,
     setIsValidPresupuesto,
-    gastado
+    gastado,
+    setGastos
 }) {
     return (
         <header>
@@ -19,7 +20,7 @@ function Header({
                     setIsValidPresupuesto={setIsValidPresupuesto}
                 />
             ):(
-              <ControPresupuesto presupuesto={presupuesto} gastado={gastado}/>
+              <ControPresupuesto presupuesto={presupuesto} gastado={gastado} setPresupuesto={setPresupuesto} setGastos={setGastos} setIsValidPresupuesto={setIsValidPresupuesto}/>
             )}
 
         </header>

@@ -6,6 +6,7 @@ function ListadoGastos({
     setModal,
     setGastoEditar,
     eliminarGasto,
+    filtro
 }) {
     return (
         <div className="listado-gastos contenedor">
@@ -14,15 +15,19 @@ function ListadoGastos({
             </h2>
 
             {gastos.map((gasto) => {
-                return (
-                    <Gasto
-                        key={gasto.id}
-                        gasto={gasto}
-                        setModal={setModal}
-                        setGastoEditar={setGastoEditar}
-                        eliminarGasto={eliminarGasto}
-                    />
-                );
+                if (gasto.categoria === filtro || filtro === '') {
+                    return (
+                        <Gasto
+                            key={gasto.id}
+                            gasto={gasto}
+                            setModal={setModal}
+                            setGastoEditar={setGastoEditar}
+                            eliminarGasto={eliminarGasto}
+                        />
+                    );
+                }else {
+                    return <></>
+                }
             })}
         </div>
     );

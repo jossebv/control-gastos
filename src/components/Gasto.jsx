@@ -27,9 +27,7 @@ function Gasto({ gasto, setModal, setGastoEditar, eliminarGasto }) {
     }
 
     function eliminarHandler() {
-        if (confirm("Estás seguro que quieres eliminar el gasto?")) {
-            eliminarGasto(gasto.id)
-        }
+        eliminarGasto(gasto.id)
     }
 
     function formatearDinero(number) {
